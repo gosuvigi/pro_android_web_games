@@ -126,7 +126,7 @@ _p._getGameState = function (column, row) {
             }
             var count = this._checkWinDirection(column, row, deltaX, deltaY) +
                         this._checkWinDirection(column, row, -deltaX, -deltaY) + 1;
-            if (column >= 4) {
+            if (count >= 4) {
                 return BoardModel.WIN;
             }
         }

@@ -39,7 +39,7 @@ _p._getBoardRect = function() {
 
     return {
         x: Math.floor((this._canvas.width - boardWidth) / 2),
-        y: Math.floor(((this._canvas.head - boardHeight) / 2)),
+        y: Math.floor(((this._canvas.height - boardHeight) / 2)),
         cellSize: cellSize
     }
 };
@@ -53,7 +53,7 @@ _p._getBoardRect = function() {
  * @param y
  */
 _p.handleClick = function(x, y) {
-    var column = Math.floor((x - this._boardRect.x) / this._boardModel.cellSize);
+    var column = Math.floor((x - this._boardRect.x) / this._boardRect.cellSize);
 
     // Make the turn and check for the result
     var turn = this._boardModel.makeTurn(column);
