@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Sheptika</title>
+    <script src="js/util.js"></script>
+    <script src="js/ImageManager.js"></script>
+    <script src="js/SpriteSheet.js"></script>
+    <script src="js/sheptika/Game.js"></script>
+    <script src="js/sheptika/Card.js"></script>
+    <script src="js/sheptika/SheptikaRenderer.js"></script>
+    <script>
+        var game;
+        var ctx;
+        var imageManager;
+        var spriteSheet;
+
+        function init() {
+            var canvas = initFullScreenCanvas('mainCanvas');
+            ctx = canvas.getContext('2d');
+
+            // background
+            var gradient = ctx.createLinearGradient(0, 0, 0, 300);
+            gradient.addColorStop(0, '#fffbb3');
+            gradient.addColorStop(1, '#f6f6b2');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // border
+            ctx.strokeStyle = '#989681';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(1, 1, canvas.width - 2, canvas.height - 2);
+
+            game = new Game(2);
+            game.aaa();
+        }
+
+    </script>
+</head>
+<body onload="init()">
+<canvas id="mainCanvas" width="1024" height="768"></canvas>
+</body>
+</html>

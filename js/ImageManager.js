@@ -3,7 +3,7 @@
  */
 
 function ImageManager(placeholderDataUri) {
-    this._imagesQueue = [];
+    //this._imagesQueue = [];
     this._images = {};
     if (placeholderDataUri) {
         this._placeholder = new Image();

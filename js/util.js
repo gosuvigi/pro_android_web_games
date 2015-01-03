@@ -36,3 +36,28 @@ window.cancelRequestAnimFrame = ( function() {
         window.msCancelRequestAnimationFrame ||
         clearTimeout
 } )();
+
+/**
+ * Resizes the canvas element once the window is resized.
+ *
+ * @param canvasId
+ * @returns {HTMLElement}
+ */
+function initFullScreenCanvas(canvasId) {
+    var canvas = document.getElementById(canvasId);
+    resizeCanvas(canvas);
+    window.addEventListener("resize", function() {
+        resizeCanvas(canvas);
+    });
+    return canvas;
+}
+
+/**
+ * Does the actual resize of the canvas.
+ *
+ * @param canvas
+ */
+function resizeCanvas(canvas) {
+    canvas.width = document.width || document.body.clientWidth;
+    canvas.height = document.height || document.body.clientHeight;
+}

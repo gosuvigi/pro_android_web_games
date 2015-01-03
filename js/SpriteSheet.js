@@ -27,6 +27,8 @@ SpriteSheet.FRAME_WIDTH = 2;
 SpriteSheet.FRAME_HEIGHT = 3;
 SpriteSheet.FRAME_ANCHOR_X = 4;
 SpriteSheet.FRAME_ANCHOR_Y = 5;
+SpriteSheet.FRAME_RESIZED_WIDTH = 6;
+SpriteSheet.FRAME_RESIZED_HEIGHT = 7;
 
 /**
  * Draws the frame of the sprite sheet in the given coordinates of the context.
@@ -42,9 +44,5 @@ _p.drawFrame = function (ctx, index, x, y) {
     }
 
     ctx.drawImage(this._image,
-        frame[SpriteSheet.FRAME_X], frame[SpriteSheet.FRAME_Y],
-        frame[SpriteSheet.FRAME_WIDTH], frame[SpriteSheet.FRAME_HEIGHT],
-        x - frame[SpriteSheet.FRAME_ANCHOR_X],
-        y - frame[SpriteSheet.FRAME_ANCHOR_Y],
-        frame[SpriteSheet.FRAME_WIDTH], frame[SpriteSheet.FRAME_HEIGHT]);
+        frame[0], frame[1], frame[2], frame[3], x, y, frame[4], frame[5]);
 };
