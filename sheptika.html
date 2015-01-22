@@ -9,11 +9,12 @@
     <script src="js/sheptika/Game.js"></script>
     <script src="js/sheptika/Card.js"></script>
     <script src="js/sheptika/SheptikaRenderer.js"></script>
+    <script src="js/sheptika/SheptikaModel.js"></script>
+    <script src="js/sheptika/Player.js"></script>
+    <script src="js/sheptika/GameRound.js"></script>
     <script>
         var game;
         var ctx;
-        var imageManager;
-        var spriteSheet;
 
         function init() {
             var canvas = initFullScreenCanvas('mainCanvas');
@@ -31,13 +32,13 @@
             ctx.lineWidth = 2;
             ctx.strokeRect(1, 1, canvas.width - 2, canvas.height - 2);
 
-            game = new Game(2);
+            game = new Game(4);
             game.aaa();
         }
 
     </script>
 </head>
 <body onload="init()">
-<canvas id="mainCanvas" width="1024" height="768"></canvas>
+<canvas id="mainCanvas" width="1024" height="900"></canvas>
 </body>
 </html>
